@@ -1,0 +1,79 @@
+#skills {
+    background: linear-gradient(145deg, #FFFFFF, #B3B5B8);
+    box-shadow: inset 12.31px 12.31px 15px #8C8E90, inset -12.31px -12.31px 15px #FFFFFF;
+}
+
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(auto, auto);
+    place-content: center;
+    place-items: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    height: 90%;
+
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        margin: 0;
+        background: linear-gradient(145deg, $light-primary, $dark-primary);
+        border-radius: 2rem;
+        box-shadow: 9.61px 9.61px 8px $dark-primary, -9.61px -9.61px 8px $light-primary;
+
+        animation: crecer 1s linear 1s both;
+
+        i {
+            font-size: 5rem;
+            animation: aparecer 1s linear 2s both;
+        }
+
+        p {
+            animation: aparecer 1s linear 2s;
+            animation-fill-mode: both;
+        }
+    }
+}
+
+.hide-animation{
+    .skill {
+        animation: crecer2 1s reverse 0s both;
+        i, p {
+            
+            animation: aparecer2 1s reverse 0s both;
+        }
+      
+    }
+}
+
+@keyframes crecer {
+    0% {
+        box-shadow: none;
+        background: none;
+    }
+}
+
+@keyframes crecer2 {
+    0% {
+        box-shadow: none;
+        background: none;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        color: transparent;
+        background: none;
+    }
+}
+
+@keyframes aparecer2 {
+    0% {
+        color: transparent;
+        background: none;
+    }
+}

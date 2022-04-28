@@ -1,0 +1,97 @@
+#projects {
+  background: linear-gradient(145deg, #FFFFFF, #B3B5B8);
+  box-shadow: inset 12.31px 12.31px 15px #BABBBE, inset -12.31px -12.31px 15px #FFFFFF;
+}
+
+.projects-container {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+
+  article {
+    width: 20rem;
+    height: 85%;
+    margin: 1rem;
+    text-align: center;
+    background: linear-gradient(145deg, $light-primary, $dark-primary);
+    border-radius: 4rem;
+    box-shadow: 9.61px 9.61px 8px $dark-primary, -9.61px -9.61px 8px $light-primary;
+    padding: 1rem;
+    overflow: hidden;
+
+    animation: article 1s linear 1s both;
+
+    img {
+
+      width: 100%;
+      height: 80%;
+      border-radius: 3.5rem 3.5rem 0 0;
+    }
+
+    span {
+      overflow: hidden;
+      background-color: red;
+
+      p {
+        margin-top: 1rem;
+        animation: articleP 1s linear 2s;
+        animation-fill-mode: both;
+      }
+    }
+  }
+}
+
+.hide-animation {
+  .projects-container {
+    article {
+      animation: article2 1s reverse 0s both;
+      
+    }
+    p {
+      animation: articleP2 1s reverse 0s both;
+    }
+  }
+}
+
+
+
+@keyframes article {
+  0% {
+    height: 0;
+    padding: 0;
+    color: transparent
+  }
+}
+
+
+@keyframes article2 {
+  0% {
+    height: 0;
+    padding: 0;
+    color: transparent
+  }
+}
+
+@keyframes articleP {
+  0% {
+    transform: translate(0px, 100px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+;
+
+@keyframes articleP2 {
+  0% {
+    transform: translate(0px, 100px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

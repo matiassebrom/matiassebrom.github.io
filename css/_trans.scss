@@ -1,0 +1,55 @@
+.transition {
+  &-delay {
+    &-05 {
+      transition-delay: 0.5s;
+    }
+  }
+  &-duration {
+    &-03 {
+      transition-duration: 0.3s;
+    }
+    &-05 {
+      transition-duration: 0.5s;
+    }
+    &-1 {
+      transition-duration: 1s;
+    }
+  }
+  &-property {
+    &-all {
+      transition-property: all;
+    }
+  }
+  &-timing-function {
+    &-linear {
+      animation-timing-function: linear;
+    }
+  }
+  &-right {
+    &-active {
+      transform: translate3d(100px, 0, 0);
+    }
+  }
+  &-left {
+    &-active {
+      transform: translate3d(-100px, 0, 0);
+    }
+  }
+}
+
+/****RESPONSIVE WEB****/
+@media (max-width: 1220px) {
+  .transition {
+    &-right {
+      &-active {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    &-left {
+      &-active {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+

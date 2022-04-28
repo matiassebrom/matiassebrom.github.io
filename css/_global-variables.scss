@@ -1,0 +1,48 @@
+/* light mode  */
+$light-primary: #ffffff;
+$primary: #e1e1e1;
+$dark-primary: #bfbfbf;
+$light-secondary: #353535;
+$secondary: #1c1c1c;
+$dark-secondary: #181818;
+
+/* darf mode */
+/* $light-primary: #202020;
+$primary:#1c1c1c;
+$dark-primary: #181818;
+$light-secondary: #ffffff;
+$secondary: #e1e1e1;
+$dark-secondary: #bfbfbf; */
+
+
+$highlighted: red;
+$highlightedshadow: rgb(86, 82, 107);
+
+
+/*TEXTS SIZES*/
+$text-xxs: 0.25rem;
+$text-xs: 0.5rem;
+$text-sm: 0.75rem;
+$text-m: 1rem;
+$text-l: 1.5rem;
+$text-xl: 2rem;
+$text-xxl: 4rem;
+
+.text-highlighted {
+    color: $highlighted
+}
+
+
+/* @mixin neomorph {
+    border-radius: 50px;
+
+    box-shadow: 20px 20px 60px #d9d9d9,
+        -20px -20px 60px #ffffff;
+}
+
+
+@mixin neomorph2 {
+    border-radius: 50px;
+    box-shadow: 20px 20px 60px #303030,
+        -20px -20px 60px #404040;
+} */

@@ -1,0 +1,33 @@
+@import "global-variables";
+@import "structure";
+@import "header";
+@import "home";
+@import "projects";
+@import "skills";
+@import "contact";
+@import "trans";
+
+
+/*GENERAL STYLES OF THE PAGE*/
+* {
+  font-family: "Orbitron", "Kaushan Script", "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $secondary;
+}
+
+
+
+/* https://neumorphic.design/ */
+
+
