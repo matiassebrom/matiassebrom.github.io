@@ -51,11 +51,12 @@ let activeSection = 0;
 
 
 function changeSection(e, index) {
+  
   clearInterval(printStr)
   e.preventDefault();
-  console.log(e.type);
   SectionsDivs[activeSection].classList.remove("show-animation");
   SectionsDivs[activeSection].classList.add("hide-animation");
+
 
   setTimeout(() => {
     navItem[activeSection].classList.remove("active");
@@ -64,17 +65,19 @@ function changeSection(e, index) {
     SectionsDivs[activeSection].classList.remove("reverse");
 
     //change active section
-    if (e.type == "click") {
-      activeSection = index;
-    }
+   
     //case wheel
-    else if (e.type == "mousewheel"){    
-      console.log();
+    if (e.type == "wheel"){    
+
       activeSection += e.deltaY * 0.01;
       activeSection = Math.min(
         Math.max(0, activeSection),
         SectionsDivs.length - 1
       );
+    }
+
+    else if (e.type == "click") {
+      activeSection = index;
     }
     //case other bts
     else if (e.type == "keydown"){ 
@@ -121,12 +124,12 @@ navLinks.forEach(function (navLink, index) {
 
 // MOUSE WHELL FUNCTION
 
-window.addEventListener(
+/* window.addEventListener(
   "mousewheel",
   function (e) {
     clearInterval(printStr)
     e.preventDefault();
-  
+    console.log(e.type);
     SectionsDivs[activeSection].classList.remove("show-animation");
     SectionsDivs[activeSection].classList.add("hide-animation");
   
@@ -154,14 +157,17 @@ window.addEventListener(
 
 
   },{ passive: false }
-);
+); */
 
-/* window.addEventListener(
+
+
+document.addEventListener(
   "mousewheel",
   function (e) {
+
     changeSection(e)
   },{ passive: false }
-  ); */
+  );
  
 
 
