@@ -6,6 +6,7 @@ const headerHeight = document
 
 const vHeight = document.querySelector("body").getBoundingClientRect().height;
 
+
 document.querySelector("main").style.height = vHeight - headerHeight + "px";
 
 const SectionsDivs = document.querySelectorAll("main > section");

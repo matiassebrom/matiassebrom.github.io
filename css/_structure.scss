@@ -69,4 +69,22 @@ body {
     }
 }
 
+/* mobile */
+@media screen and (max-width: 800px) {
+    body{
+        height: 100vh;
+        main {
+            padding: 1rem;
+            padding-top: 0;
+            width: 100%;
+
+            section{
+                width: 100%;
+            }
+
+    }
+    }
+
+
+}
 /* structure end */

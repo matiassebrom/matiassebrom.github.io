@@ -13,9 +13,8 @@
     border-radius: 4rem;
     box-shadow: 9.61px 9.61px 8px $dark-primary, -9.61px -9.61px 8px $light-primary;
     align-items: center;
-    justify-content: flex-start;
     justify-items: center;
-    align-content: flex-start;
+    
 }
 
 
@@ -175,5 +174,29 @@
 @keyframes contact-links2 {
     0% {
         color: transparent
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 800px) {
+    .contact-container{
+        overflow: scroll;
+        width: 100%;
+        height: 100%;
+        padding: 0rem;
+        margin: 0rem;
+        align-items: center;
+        justify-content: flex-start;
+        justify-items: center;
+        align-content: flex-start;
+    }
+    
+    .contact-form{
+        width: 100%;
+        margin: 0rem;
+    }
+
+    .contact-links-container{
+        width: 100%;
     }
 }

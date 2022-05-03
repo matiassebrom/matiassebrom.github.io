@@ -43,6 +43,8 @@
 }
 
 .home_description {
+  display: flex;
+  align-items: center;
   text-align: justify;
   line-height: 2rem;
   width: 40%;
@@ -115,4 +117,38 @@
     width: 0;
     padding: 0;
   }
+}
+
+/* mobile */
+@media screen and (max-width: 800px) {
+  .home-logo{
+    display: none;
+  }
+
+  #home {
+    div{
+      position: relative;
+      
+      &::before{
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background-image: url(../img/logoMatiassebrom.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+    }
+  .home_description{
+    width: 80%;
+    height: 80%;
+  }
+  
+  }
+
 }
