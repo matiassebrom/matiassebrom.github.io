@@ -17,9 +17,6 @@ const descriptionText = description.innerHTML;
 description.innerHTML = "";
 let printStr = "";
 
-
-
-
 const writeDescription = (text = descriptionText) => {
    
     let arrFromDescription = text.split("");
@@ -46,33 +43,75 @@ setTimeout(() => {
 
 
 // IR A LAS SECCIONES DESDE LA NAV
-
+const navItem = document.querySelectorAll("#header > nav > ul > li");
 const navLinks = document.querySelectorAll("#header > nav > ul > li > a");
 const sections = document.querySelectorAll("section");
 let activeSection = 0;
 
+
+
+function changeSection(e, index) {
+  clearInterval(printStr)
+  e.preventDefault();
+
+  SectionsDivs[activeSection].classList.remove("show-animation");
+  SectionsDivs[activeSection].classList.add("hide-animation");
+  
+  
+
+  setTimeout(() => {
+    navItem[activeSection].classList.remove("active");
+    SectionsDivs[activeSection].classList.add("hide");
+    SectionsDivs[activeSection].classList.remove("hide-animation");
+    SectionsDivs[activeSection].classList.remove("reverse");
+
+    //change active section
+    if (e.type == "click") {
+      activeSection = index;
+    }
+
+    //case wheel
+    else if (e.type == "mousewheel"){    
+      activeSection += e.deltaY * 0.01;
+      activeSection = Math.min(
+        Math.max(0, activeSection),
+        SectionsDivs.length - 1
+      );
+    }
+    //case other bts
+    else if (e.type == "keydown"){ 
+      //bts +
+      if (e.key == "ArrowUp" || e.key == "PageUp") {
+        activeSection--;
+        activeSection = Math.min(
+          Math.max(0, activeSection),
+          SectionsDivs.length - 1
+        );
+      }
+      else if (e.key == "ArrowDown" || e.key == "PageDown" || e.keyCode == 32 ||e.code == "Space"){
+        //bts -
+        activeSection++;
+        activeSection = Math.min(
+          Math.max(0, activeSection),
+          SectionsDivs.length - 1
+        );
+      }
+    }
+
+    SectionsDivs[activeSection].classList.remove("hide");
+    SectionsDivs[activeSection].classList.add("show-animation");
+    navItem[activeSection].classList.add("active");
+
+    writeDescription();
+  }, "2000");
+} 
+
+
+
+
 navLinks.forEach(function (navLink, index) {
   navLink.addEventListener("click", function (e) {
-
-
-    clearInterval(printStr)
-
-    SectionsDivs[activeSection].classList.remove("show-animation");
-    SectionsDivs[activeSection].classList.add("hide-animation");
-
-  
-    setTimeout(() => {
-      SectionsDivs[activeSection].classList.add("hide");
-      SectionsDivs[activeSection].classList.remove("hide-animation");
-      SectionsDivs[activeSection].classList.remove("reverse");
-
-      activeSection = index;
-
-      SectionsDivs[activeSection].classList.remove("hide");
-      SectionsDivs[activeSection].classList.add("show-animation");
-
-      writeDescription();
-    }, "2000");
+    changeSection(e, index)
   });
 });
 
@@ -87,31 +126,7 @@ navLinks.forEach(function (navLink, index) {
 window.addEventListener(
   "mousewheel",
   function (e) {
-    e.preventDefault();
-
-    
-    
-    SectionsDivs[activeSection].classList.remove("show-animation");
-    SectionsDivs[activeSection].classList.add("hide-animation");
-
-
-    setTimeout(() => {
-      SectionsDivs[activeSection].classList.add("hide");
-      SectionsDivs[activeSection].classList.remove("hide-animation");
-
-
-      activeSection += e.deltaY * 0.01;
-      activeSection = Math.min(
-        Math.max(0, activeSection),
-        SectionsDivs.length - 1
-      );
-
-      SectionsDivs[activeSection].classList.remove("hide");
-      SectionsDivs[activeSection].classList.add("show-animation");
-
-      writeDescription();
-
-    }, "2000");
+    changeSection(e)
   },
   { passive: false }
 );
@@ -119,59 +134,14 @@ window.addEventListener(
 // ARROW AND PAGE UP, DOWN, SPACE FUNCTION
 
 document.addEventListener("keydown", function (e) {
-  if (e.key == "ArrowUp" || e.key == "PageUp") {
-    e.preventDefault();
-
-    
-
-    SectionsDivs[activeSection].classList.remove("show-animation");
-    SectionsDivs[activeSection].classList.add("hide-animation");
-
-    setTimeout(() => {
-      SectionsDivs[activeSection].classList.add("hide");
-      SectionsDivs[activeSection].classList.remove("hide-animation");
-
-
-      activeSection--;
-      activeSection = Math.min(
-        Math.max(0, activeSection),
-        SectionsDivs.length - 1
-      );
-
-      SectionsDivs[activeSection].classList.remove("hide");
-      SectionsDivs[activeSection].classList.add("show-animation");
-
-      writeDescription();
-
-    }, "2000");
-  } else if (
-    e.key == "ArrowDown" ||
-    e.key == "PageDown" ||
-    e.keyCode == 32 ||
-    e.code == "Space"
-  ) {
-    e.preventDefault();
-
-    
-
-    SectionsDivs[activeSection].classList.remove("show-animation");
-    SectionsDivs[activeSection].classList.add("hide-animation");
-
-
-    setTimeout(() => {
-      SectionsDivs[activeSection].classList.add("hide");
-      SectionsDivs[activeSection].classList.remove("hide-animation");
-
-      activeSection++;
-      activeSection = Math.min(
-        Math.max(0, activeSection),
-        SectionsDivs.length - 1
-      );
-
-      SectionsDivs[activeSection].classList.remove("hide");
-      SectionsDivs[activeSection].classList.add("show-animation");
-
-      
-    }, "2000");
+  if (e.key == "ArrowUp" 
+  || e.key == "PageUp" 
+  || e.key == "ArrowDown" 
+  || e.key == "PageDown" 
+  || e.keyCode == 32 
+  || e.code == "Space" ) {
+    changeSection(e)
   }
 });
+
+
