@@ -212,7 +212,7 @@ header nav ul li :hover p {
   transition: all 0.3s linear;
 }
 
-header nav ul li.active i, header nav ul li.active P {
+header nav ul li.active i, header nav ul li.active p {
   height: 50%;
   display: block;
 }
@@ -1006,8 +1006,6 @@ header nav ul li.active i, header nav ul li.active P {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 1rem;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
 }
 
 * ::-webkit-scrollbar {

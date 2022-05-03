@@ -53,11 +53,9 @@ let activeSection = 0;
 function changeSection(e, index) {
   clearInterval(printStr)
   e.preventDefault();
-
+  console.log(e.type);
   SectionsDivs[activeSection].classList.remove("show-animation");
   SectionsDivs[activeSection].classList.add("hide-animation");
-  
-  
 
   setTimeout(() => {
     navItem[activeSection].classList.remove("active");
@@ -69,9 +67,9 @@ function changeSection(e, index) {
     if (e.type == "click") {
       activeSection = index;
     }
-
     //case wheel
     else if (e.type == "mousewheel"){    
+      console.log();
       activeSection += e.deltaY * 0.01;
       activeSection = Math.min(
         Math.max(0, activeSection),
@@ -126,10 +124,48 @@ navLinks.forEach(function (navLink, index) {
 window.addEventListener(
   "mousewheel",
   function (e) {
-    changeSection(e)
-  },
-  { passive: false }
+    clearInterval(printStr)
+    e.preventDefault();
+  
+    SectionsDivs[activeSection].classList.remove("show-animation");
+    SectionsDivs[activeSection].classList.add("hide-animation");
+  
+    setTimeout(() => {
+      navItem[activeSection].classList.remove("active");
+      SectionsDivs[activeSection].classList.add("hide");
+      SectionsDivs[activeSection].classList.remove("hide-animation");
+      SectionsDivs[activeSection].classList.remove("reverse");
+  
+
+      
+        activeSection += e.deltaY * 0.01;
+        activeSection = Math.min(
+          Math.max(0, activeSection),
+          SectionsDivs.length - 1
+        );
+      
+    
+      SectionsDivs[activeSection].classList.remove("hide");
+      SectionsDivs[activeSection].classList.add("show-animation");
+      navItem[activeSection].classList.add("active");
+
+    writeDescription();
+  }, "2000");
+
+
+  },{ passive: false }
 );
+
+/* window.addEventListener(
+  "mousewheel",
+  function (e) {
+    changeSection(e)
+  },{ passive: false }
+  ); */
+ 
+
+
+
 
 // ARROW AND PAGE UP, DOWN, SPACE FUNCTION
 
