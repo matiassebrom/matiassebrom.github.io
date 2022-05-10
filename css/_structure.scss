@@ -3,7 +3,7 @@ body {
     background-color: $secondary;
     color: $secondary;
     height: 100vh;
-    
+
 
     main {
         display: flex;
@@ -71,20 +71,24 @@ body {
 
 /* mobile */
 @media screen and (max-width: 800px) {
-    body{
+    body {
         height: 100vh;
+
         main {
             padding: 1rem;
             padding-top: 0;
             width: 100%;
 
-            section{
+            section {
                 width: 100%;
             }
 
-    }
+        }
+
+        
     }
 
 
 }
+
 /* structure end */

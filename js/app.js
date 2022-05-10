@@ -70,11 +70,13 @@ function changeSection(e, index) {
     //case wheel
     if (e.type == "wheel"){    
 
-      activeSection += e.deltaY * 0.01;
+      activeSection += Math.round(e.deltaY*0.01);
       activeSection = Math.min(
         Math.max(0, activeSection),
         SectionsDivs.length - 1
       );
+      console.log(activeSection);
+      
     }
 
     else if (e.type == "click") {
@@ -163,10 +165,11 @@ navLinks.forEach(function (navLink, index) {
 
 
 document.addEventListener(
-  "mousewheel",
+  "wheel",
   function (e) {
-
+    
     changeSection(e)
+
   },{ passive: false }
   );
  

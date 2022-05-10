@@ -1,20 +1,28 @@
 #contact {
     background: linear-gradient(145deg, #FFFFFF, #B3B5B8);
     box-shadow: inset 12.31px 12.31px 15px #77787A, inset -12.31px -12.31px 15px #FFFFFF;
+
+    h2 {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 3rem;
+
+        padding: 0 1rem;
+
+    }
 }
 
 .contact-container {
+    background: linear-gradient(145deg, $light-primary, $dark-primary);
+    box-shadow: 9.61px 9.61px 8px $dark-primary, -9.61px -9.61px 8px $light-primary;
+    border-radius: 4rem;
     margin: 3rem;
     margin-top: 1rem;
     padding: 1rem;
     height: 90%;
     display: flex;
-    background: linear-gradient(145deg, $light-primary, $dark-primary);
-    border-radius: 4rem;
-    box-shadow: 9.61px 9.61px 8px $dark-primary, -9.61px -9.61px 8px $light-primary;
     align-items: center;
     justify-items: center;
-    
 }
 
 
@@ -60,15 +68,17 @@
         margin: 0rem;
         background: linear-gradient(145deg, #FFFFFF, #B7B7B7);
         border-radius: 1rem;
-        box-shadow:  9.91px 9.91px 15px #CDCDCD, -9.91px -9.91px 15px #F5F5F5;
+        box-shadow: 9.91px 9.91px 15px #CDCDCD, -9.91px -9.91px 15px #F5F5F5;
         text-transform: capitalize;
 
         &:hover {
             letter-spacing: 0.1rem;
             font-weight: bolder;
-            
-            transition: all 0.2s;;
+
+            transition: all 0.2s;
+            ;
         }
+
         &:active {
             background: none;
             border-radius: 1rem;
@@ -81,19 +91,18 @@
 
 
 .contact-links-container {
+    background: linear-gradient(145deg, #FFFFFF, #B7B7B7);
     width: 50%;
+    border-radius: 4rem;
+    box-shadow: 9.91px 9.91px 15px #CDCDCD, -9.91px -9.91px 15px #F5F5F5;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    box-shadow: none;
-    background: transparent;
+
     padding: 1rem;
     margin: 1rem;
     height: 100%;
-    background: linear-gradient(145deg, #FFFFFF, #B7B7B7);
-    border-radius: 4rem;
-    box-shadow: 9.91px 9.91px 15px #CDCDCD, -9.91px -9.91px 15px #F5F5F5;
 }
 
 /* animaciones */
@@ -101,36 +110,39 @@
 
 .contact-container {
     animation: 1s contact-container 1s both;
-    }
+}
 
 .contact-inputs {
     animation: 0.5s contact-inputs linear 2s both;
-    }
+}
 
 .contact-links-container {
     animation: 0.5s contact-inputs linear 2.5s both;
-    }
+}
 
-.contact-links{
+.contact-links {
     animation: 0.5s contact-links linear 3s both;
-    }
+}
 
-.hide-animation{
+.hide-animation {
     .contact-container {
         animation: 1s contact-container2 reverse 0s;
-        animation-fill-mode:both;
+        animation-fill-mode: both;
     }
+
     .contact-inputs {
         animation: 0.5s contact-inputs2 reverse 0.7s;
         animation-fill-mode: both;
     }
+
     .contact-links-container {
         animation: 0.5s contact-inputs2 reverse 0.2s;
         animation-fill-mode: both;
     }
-    .contact-links{
+
+    .contact-links {
         animation: 0.2s contact-links2 reverse 0s both;
-        }
+    }
 }
 
 @keyframes contact-container {
@@ -179,24 +191,43 @@
 
 /* mobile */
 @media screen and (max-width: 800px) {
-    .contact-container{
+    .contact-container {
         overflow: scroll;
         width: 100%;
         height: 100%;
         padding: 0rem;
         margin: 0rem;
-        align-items: center;
-        justify-content: flex-start;
-        justify-items: center;
-        align-content: flex-start;
+        display: flex;
     }
-    
-    .contact-form{
-        width: 100%;
+
+    .contact-form {
+        width: 100% !important;
         margin: 0rem;
     }
 
-    .contact-links-container{
+    .contact-links-container {
         width: 100%;
     }
+
+    span {
+        &.inactive {
+       
+            color: $dark-primary;
+        }
+    }
+
+    .contact-form, .contact-links-container{ 
+        transition: all 0.3s linear;
+        &.inactive {
+            width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden;
+            
+            
+         }
+    }
+
+
+
 }
