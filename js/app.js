@@ -1,3 +1,4 @@
+
 // AGREGAR PADDING A LAS SECCIONES PARA QUE ENTRE LA NAV
 
 const headerHeight = document
@@ -179,15 +180,20 @@ document.addEventListener(
 
 // ARROW AND PAGE UP, DOWN, SPACE FUNCTION
 
-document.addEventListener("keydown", function (e) {
-  if (e.key == "ArrowUp" 
-  || e.key == "PageUp" 
-  || e.key == "ArrowDown" 
-  || e.key == "PageDown" 
-  || e.keyCode == 32 
-  || e.code == "Space" ) {
-    changeSection(e)
+document.addEventListener("keydown", function detectartecla(e) {
+  if (e.target.tagName != "INPUT" && e.target.tagName != "TEXTAREA") {
+   
+    if (e.key == "ArrowUp" 
+    || e.key == "PageUp" 
+    || e.key == "ArrowDown" 
+    || e.key == "PageDown" 
+    || e.keyCode == 32 
+    || e.code == "Space" ) {
+    
+      changeSection(e);
+    
+    }
   }
-});
+})
 
 

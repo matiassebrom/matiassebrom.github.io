@@ -1,10 +1,13 @@
 #skills {
     background: linear-gradient(145deg, #FFFFFF, #B3B5B8);
     box-shadow: inset 12.31px 12.31px 15px #8C8E90, inset -12.31px -12.31px 15px #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tech-container {
-    display: grid;
+    /*     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(auto, auto);
     place-content: center;
@@ -12,15 +15,27 @@
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+    height: 90%; */
+    display: grid;
+    grid-template-columns:   1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-content: center;
+    place-items: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
     height: 90%;
+    width: calc(100% - 4rem);
 
 
     .skill {
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding: 2rem;
-        margin: 0;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
         background: linear-gradient(145deg, $light-primary, $dark-primary);
         border-radius: 2rem;
         box-shadow: 9.61px 9.61px 8px $dark-primary, -9.61px -9.61px 8px $light-primary;
@@ -39,14 +54,16 @@
     }
 }
 
-.hide-animation{
+.hide-animation {
     .skill {
         animation: crecer2 1s reverse 0s both;
-        i, p {
-            
+
+        i,
+        p {
+
             animation: aparecer2 1s reverse 0s both;
         }
-      
+
     }
 }
 
@@ -76,4 +93,29 @@
         color: transparent;
         background: none;
     }
+}
+
+@media screen and (max-width: 800px) {
+    .skill {
+
+        width: 100%;
+        height: 100%;
+
+        i {
+            font-size: 3rem;
+        }
+    }
+
+/*     .tech-container {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-template-rows: repeat(auto-fill, 1fr);
+        place-content: center;
+        place-items: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        height: 90%;
+    } */
 }
