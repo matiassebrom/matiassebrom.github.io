@@ -1,8 +1,13 @@
 /* structure start */
+html{
+    height: -webkit-fill-available;
+}
+
 body {
     background-color: $secondary;
     color: $secondary;
-    height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 
 
     main {
@@ -72,7 +77,7 @@ body {
 /* mobile */
 @media screen and (max-width: 800px) {
     body {
-        height: 100%;
+        
 
         main {
             padding: 1rem;

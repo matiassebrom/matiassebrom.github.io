@@ -25,10 +25,15 @@ $dark-secondary: #bfbfbf; */
         -20px -20px 60px #404040;
 } */
 /* structure start */
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   background-color: #1c1c1c;
   color: #1c1c1c;
-  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 body main {
@@ -121,9 +126,6 @@ body main section h2 {
 
 /* mobile */
 @media screen and (max-width: 800px) {
-  body {
-    height: 100%;
-  }
   body main {
     padding: 1rem;
     padding-top: 0;
