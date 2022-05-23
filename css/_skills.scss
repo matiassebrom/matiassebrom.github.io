@@ -7,28 +7,23 @@
 }
 
 .tech-container {
-    /*     display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(auto, auto);
-    place-content: center;
-    place-items: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    height: 90%; */
+    height: 100%;
+    width: 100%;
     display: grid;
-    grid-template-columns:   1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-auto-rows: repeat(auto-fill, 1fr);
     place-content: center;
     place-items: center;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
-    height: 90%;
-    width: calc(100% - 4rem);
-
+/*  display: flex;
+    flex-wrap: wrap; */
 
     .skill {
+        aspect-ratio: 1;
+        flex: 1 1 5rem;
+        max-width: 10rem;
+        max-height: 10rem;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -54,6 +49,26 @@
     }
 }
 
+@media screen and (max-width: 800px) {
+  .tech-container {
+
+/*     grid-template-columns:  repeat(2, 1fr); */
+     grid-auto-rows: repeat(auto-fitt, 1fr);
+     grid-auto-rows: auto;
+    gap: 1rem;
+    .skill {
+      
+      /* max-width: 100%; 
+      max-height: 100%;*/
+      font-size: 4rem; 
+      i{
+        font-size: 4rem; 
+      }
+    }
+    
+  } 
+}
+
 .hide-animation {
     .skill {
         animation: crecer2 1s reverse 0s both;
@@ -66,6 +81,31 @@
 
     }
 }
+
+@media screen and (max-width: 800px) {
+    .skill {
+
+        
+        max-width: 3rem;
+        max-height: 3rem;
+        font-size: 1.5rem;
+
+    }
+
+/*     .tech-container {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-template-rows: repeat(auto-fill, 1fr);
+        place-content: center;
+        place-items: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        height: 90%;
+    } */
+}
+
 
 @keyframes crecer {
     0% {
@@ -95,27 +135,3 @@
     }
 }
 
-@media screen and (max-width: 800px) {
-    .skill {
-
-        width: 100%;
-        height: 100%;
-
-        i {
-            font-size: 3rem;
-        }
-    }
-
-/*     .tech-container {
-
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 1fr);
-        grid-template-rows: repeat(auto-fill, 1fr);
-        place-content: center;
-        place-items: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-        height: 90%;
-    } */
-}

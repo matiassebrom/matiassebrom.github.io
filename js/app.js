@@ -1,7 +1,7 @@
 
 // AGREGAR PADDING A LAS SECCIONES PARA QUE ENTRE LA NAV
 
-const headerHeight = document
+/* const headerHeight = document
   .querySelector("header")
   .getBoundingClientRect().height;
 
@@ -9,8 +9,9 @@ const vHeight = document.querySelector("body").getBoundingClientRect().height;
 
 
 document.querySelector("main").style.height = vHeight - headerHeight + "px";
+ */
 
-const SectionsDivs = document.querySelectorAll("main > section");
+
 
 //efecto maquina de escribir para descripcion
 
@@ -45,6 +46,7 @@ setTimeout(() => {
 
 
 // IR A LAS SECCIONES DESDE LA NAV
+const SectionsDivs = document.querySelectorAll("main > section");
 const navItem = document.querySelectorAll("#header > nav > ul > li");
 const navLinks = document.querySelectorAll("#header > nav > ul > li > a");
 const sections = document.querySelectorAll("section");

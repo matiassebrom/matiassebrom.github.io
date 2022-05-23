@@ -1,14 +1,7 @@
 header {
-  width: calc(100% - 8rem);
-  margin: 4rem;
-  margin-bottom: 0;
-  flex-wrap: wrap;
-  padding: 0 2rem ;
-  padding-bottom: 0;
-
   box-shadow: 0px 10px 10px -8px $dark-primary;
   background-color: $primary;
-  border-radius: 4rem 4rem 0 0;
+  
 
   display: flex;
   justify-content: space-between;
@@ -17,6 +10,9 @@ header {
   div {
     flex: 1 1 auto;
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
   }
 
@@ -86,12 +82,6 @@ header {
 /* mobile */
 @media screen and (max-width: 800px) {
   header {
-    width: calc(100% - 2rem);
-    margin: 1rem;
-    margin-bottom: 0;
-   
-
-
 
     div {
       padding: 1rem;
