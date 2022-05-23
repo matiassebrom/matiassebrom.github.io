@@ -25,10 +25,10 @@ $dark-secondary: #bfbfbf; */
         -20px -20px 60px #404040;
 } */
 /* structure start */
-/* html{
-    
+html {
+  min-height: -webkit-fill-available;
+}
 
-} */
 body {
   height: 100vh;
   min-height: -webkit-fill-available;
